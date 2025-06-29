@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Dolce Vita Trattoria | Authentisches italienisches Luxus-Dining</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" >
+        <div class="nav-container">
+            <a href="#home" class="logo">La Dolce Vita</a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Startseite</a></li>
+                <li><a href="#about" class="nav-link">Über uns</a></li>
+                <li><a href="#locations" class="nav-link">Standorte</a></li>
+                <li><a href="#menu-page" class="nav-link" id="nav-link-special">Menü</a></li>
+                <li><a href="#reservation" class="nav-link" id="nav-link-special">Reservierungen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="slideshow">
+            <div class="slideshow-item active" style="background-image: url('./photo-video/outside.jpg')"></div>
+            <div class="slideshow-item" style="background-image: url('./photo-video/insidecover.jpg')"></div>
+            <div class="slideshow-item" style="background-image: url('./photo-video/chefprep.jpg')"></div>
+            <div class="slideshow-item" style="background-image: url('./photo-video/widehead.jpg')"></div>
+            <div class="slideshow-item" style="background-image: url('./photo-video/inter.jpg')"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-subtitle">Authentische italienische Erfahrung</p>
+                <h1 class="hero-title">La Dolce Vita<br>Trattoria</h1>
+                <p class="hero-description">Wo süditalienische Tradition auf moderne Eleganz trifft.<br>Erleben Sie das süße Leben durch außergewöhnliche Küche.</p>
+                <div class="hero-buttons">
+                    <a href="#reservation" class="btn" onclick="openReservation()">Tisch reservieren</a>
+                    <a href="#menu-page" class="btn" onclick="openMenu()">Online bestellen</a>
+                </div>
+                <br><br><br>
+                <p>(Diese Webseite dient ausschließlich zur Schau. Dies ist kein echtes Restaurant)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-subtitle">Unsere Geschichte</p>
+                <h2 class="section-title"><span>Ein Familienlegacy</span></h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>La Dolce Vita Trattoria verkörpert die italienische Philosophie des "süßen Lebens" durch unser Engagement für authentische, frisch vom Bauernhof stammende Zutaten und traditionelle Kochmethoden, die über Generationen weitergegeben wurden.</p>
+                    <p>Unsere gemütlichen, familiengeführten Restaurants verbinden rustikalen Charme mit zeitgenössischer Eleganz und verfügen über handgefertigte Holztische, warmes Licht und offene Küchen, in denen unsere geschickten Köche täglich frische Pasta herstellen.</p>
+                    <p>Perfekt für romantische Abendessen, familiäre Zusammenkünfte und intime Feiern – wir laden Sie ein, das wahre Wesen italienischer Gastfreundschaft und Küche zu erleben.</p>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="photo-video/chefprep.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview Section -->
+    <section class="menu-preview">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-subtitle">Kulinarische Köstlichkeiten</p>
+                <h2 class="section-title">Unser Menü</h2>
+                <p class="section-description">Entdecken Sie die Vielfalt der italienischen Küche. Von handgemachter Pasta bis zu traditionellen Holzofen-Pizzen – jedes Gericht erzählt seine eigene Geschichte.</p>
+                <div class="preview-images">
+                    <div class="pasta-preview">
+                        <img src="photo-video/pasta.jpg" alt="Pasta">
+                    </div>
+                    <div class="pizza-preview">
+                        <img src="photo-video/pizza.jpg" alt="Pizza">
+                    </div>
+                    <div class="dessert-preview">
+                        <img src="photo-video/dessert.jpg" alt="Dessert">
+                    </div>
+                </div>
+                <div class="zitat">
+                -„Die italienische Küche ist eine Feier des Lebens, ein Fest der Aromen und eine Einladung, die Schönheit der Einfachheit zu genießen. Jedes Gericht ist ein Kunstwerk, das mit Liebe und Leidenschaft zubereitet wird.“
+                <br><br>
+                
+                -„Gutes Essen ist eine Kunstform, die die Seele nährt und die Sinne erfreut – ein Tanz der Zutaten und eine Symphonie von Aromen, die Menschen verbindet und die Schönheit des Lebens feiert.“
+                </div>
+
+                <section id="menu-page" class="menu-section">
+                    <button class="btn" id="menu-btn" onclick="openMenu()">Menü entdecken</button>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Page -->
+    <div id="menu-window" class="menu-window" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: white; overflow-y: auto; z-index: 1000;">
+        <section class="menu-preview">
+            <div class="container">
+                <button class="close-btn" onclick="closeMenu()">×</button>
+                <div class="container">
+                    <div class="section-header fade-in">
+                        <p class="section-subtitle">Kulinarische Exzellenz</p>
+                        <h2 class="section-title">Unser Menü</h2>
+                        <p class="section-description">Saisonale italienische Küche, zubereitet mit den feinsten Zutaten</p>
+                        <div class="menu-grid">
+                            <div class="menu-category">
+                                <h3>Antipasti</h3>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Bruschetta al Pomodoro</h4>
+                                        <p>Geröstetes Ciabatta mit frischen Tomaten, Basilikum und Olivenöl</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€7,50</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Bruschetta al Pomodoro')">-</button>
+                                            <span class="menu-quantity" id="qty-Bruschetta al Pomodoro">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Bruschetta al Pomodoro', 7.50)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Carpaccio di Manzo</h4>
+                                        <p>Dünn geschnittenes Rindfleisch mit Rucola, Parmesan und Trüffelöl</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€12,90</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Carpaccio di Manzo')">-</button>
+                                            <span class="menu-quantity" id="qty-Carpaccio di Manzo">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Carpaccio di Manzo', 12.90)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Burrata Caprese</h4>
+                                        <p>Cremige Burrata mit Erbstomaten und Balsamico-Glasur</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€10,50</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Burrata Caprese')">-</button>
+                                            <span class="menu-quantity" id="qty-Burrata Caprese">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Burrata Caprese', 10.50)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Antipasto della Casa</h4>
+                                        <p>Auswahl italienischer Spezialitäten: Salami, Parmaschinken, Oliven, Mozzarella</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€14,90</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Antipasto della Casa')">-</button>
+                                            <span class="menu-quantity" id="qty-Antipasto della Casa">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Antipasto della Casa', 14.90)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Vitello Tonnato</h4>
+                                        <p>Kalbfleisch in dünnen Scheiben mit cremiger Thunfisch-Sauce</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€11,50</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Vitello Tonnato')">-</button>
+                                            <span class="menu-quantity" id="qty-Vitello Tonnato">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Vitello Tonnato', 11.50)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-category">
+                                <h3>Primi Piatti</h3>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Tagliatelle al Ragù</h4>
+                                        <p>Hausgemachte Pasta mit langsam gekochtem Rind- und Schweine-Ragù</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€15,90</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Tagliatelle al Ragù')">-</button>
+                                            <span class="menu-quantity" id="qty-Tagliatelle al Ragù">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Tagliatelle al Ragù', 15.90)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Spaghetti Carbonara</h4>
+                                        <p>Traditionelle römische Pasta mit Ei, Pecorino und Guanciale</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€13,90</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Spaghetti Carbonara')">-</button>
+                                            <span class="menu-quantity" id="qty-Spaghetti Carbonara">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Spaghetti Carbonara', 13.90)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Risotto ai Funghi Porcini</h4>
+                                        <p>Cremiges Risotto mit Wildpilzen und Parmesan</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€16,50</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Risotto ai Funghi Porcini')">-</button>
+                                            <span class="menu-quantity" id="qty-Risotto ai Funghi Porcini">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Risotto ai Funghi Porcini', 16.50)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Linguine alle Vongole</h4>
+                                        <p>Linguine mit frischen Venusmuscheln in Weißwein-Knoblauch-Sauce</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€17,90</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Linguine alle Vongole')">-</button>
+                                            <span class="menu-quantity" id="qty-Linguine alle Vongole">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Linguine alle Vongole', 17.90)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-category">
+                                <h3>Secondi Piatti</h3>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Saltimbocca alla Romana</h4>
+                                        <p>Kalbs-Escalope mit Prosciutto und Salbei, gebratene Kartoffeln</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€19,90</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Saltimbocca alla Romana')">-</button>
+                                            <span class="menu-quantity" id="qty-Saltimbocca alla Romana">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Saltimbocca alla Romana', 19.90)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Osso Buco alla Milanese</h4>
+                                        <p>Geschmorte Kalbshaxe mit Gremolata und Risotto</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€24,90</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Osso Buco alla Milanese')">-</button>
+                                            <span class="menu-quantity" id="qty-Osso Buco alla Milanese">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Osso Buco alla Milanese', 24.90)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Branzino in Crosta di Sale</h4>
+                                        <p>Wolfsbarsch in Salzkruste mit mediterranem Gemüse</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€22,50</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Branzino in Crosta di Sale')">-</button>
+                                            <span class="menu-quantity" id="qty-Branzino in Crosta di Sale">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Branzino in Crosta di Sale', 22.50)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-category">
+                                <h3>Pizza</h3>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Pizza Margherita</h4>
+                                        <p>Tomatensauce, Mozzarella, frisches Basilikum</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€11,50</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Pizza Margherita')">-</button>
+                                            <span class="menu-quantity" id="qty-Pizza Margherita">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Pizza Margherita', 11.50)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Pizza Prosciutto e Funghi</h4>
+                                        <p>Tomatensauce, Mozzarella, Parmaschinken, Champignons</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€14,90</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Pizza Prosciutto e Funghi')">-</button>
+                                            <span class="menu-quantity" id="qty-Pizza Prosciutto e Funghi">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Pizza Prosciutto e Funghi', 14.90)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Pizza Diavola</h4>
+                                        <p>Tomatensauce, Mozzarella, scharfe Salami, Peperoncini</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€13,90</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Pizza Diavola')">-</button>
+                                            <span class="menu-quantity" id="qty-Pizza Diavola">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Pizza Diavola', 13.90)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-category">
+                                <h3>Dolci</h3>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Tiramisù</h4>
+                                        <p>Klassischer italienischer Kaffee-Dessert</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€7,50</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Tiramisù')">-</button>
+                                            <span class="menu-quantity" id="qty-Tiramisù">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Tiramisù', 7.50)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Panna Cotta</h4>
+                                        <p>Vanille-Panna Cotta mit Beerensauce</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€6,90</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Panna Cotta')">-</button>
+                                            <span class="menu-quantity" id="qty-Panna Cotta">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Panna Cotta', 6.90)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-info">
+                                        <h4>Gelato Trio</h4>
+                                        <p>Hausgemachtes Gelato: Vanille, Pistazie, Schokolade</p>
+                                    </div>
+                                    <div class="menu-controls">
+                                        <span class="menu-price">€6,50</span>
+                                        <div class="menu-quantity-controls">
+                                            <button class="menu-qty-btn minus" onclick="removeFromCartMenu('Gelato Trio')">-</button>
+                                            <span class="menu-quantity" id="qty-Gelato Trio">0</span>
+                                            <button class="menu-qty-btn plus" onclick="addToCart('Gelato Trio', 6.50)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br><br>
+                            <button class="btn" onclick="showOrderPage()">Jetzt bestellen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Order Page -->
+    <div id="order-page" class="page">
+        <section class="order-page">
+            <div class="container">
+                <button class="close-btn" onclick="showMenuPage()">×</button>
+                <div class="section-header">
+                    <p class="section-subtitle">Ihre Bestellung</p>
+                    <h2 class="section-title" id="last-order-page-title">Bestellung aufgeben</h2>
+                </div>
+                <div class="order-grid">
+                    <div class="order-form">
+                        <h3>Ihre Kontaktdaten :</h3>
+                        <div class="form-group"> <br><br>
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon *</label>
+                            <input type="tel" id="phone" pattern="^[+0-9]+$" title="Bitte nur Zahlen und + eingeben" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="delivery-type">Lieferung oder Abholung *</label>
+                            <select id="delivery-type" onchange="toggleAddressField()">
+                                <option value="pickup">Abholung</option>
+                                <option value="delivery">Lieferung</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="address-group" style="display: none;">
+                            <label for="address">Lieferadresse *</label><br>
+                            <textarea id="address" rows="3" placeholder="Straße, Hausnummer, PLZ, Ort"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Anmerkungen</label>
+                            <textarea id="notes" rows="3" placeholder="Besondere Wünsche, Allergien, etc."></textarea>
+                        </div>
+                    </div>
+                    <div class="cart-summary">
+                        <h3>Warenkorb</h3>
+                        <div id="cart-items"></div>
+                    
+                         <div>
+                            <span class="gesammt-title">Gesamt:</span>
+                            <span id="total-price">€0,00</span>
+                        </div>
+                    </div>
+                    <button class="btn" id="order-submit" onclick="submitOrder()">Bestellung abschicken</button>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Locations -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-subtitle" id="subtitle-location">Besuchen Sie uns</p>
+                <h2 class="section-title">Unser Standort</h2>
+                <p class="section-description">Außergewöhnliche Erlebnisse in einer von Deutschlands lebendigsten Städten.</p>
+            </div>
+            <div class="locations-flex">
+                <div class="location-card-bright fade-in">
+                    <div class="location-image-banner-large">
+                        <img src="photo-video/widehead.jpg" alt="La Dolce Vita München" />
+                    </div>
+                    <div class="location-card-content">
+                        <h3 class="location-title">München Standort</h3>
+                        <div class="location-details">
+                            <p><strong>Adresse:</strong> Sonnenstraße 12, 80331 München</p>
+                            <p><strong>Kapazität:</strong> 60 Innenplätze, 30 Außenplätze</p>
+                            <p><strong>Ausstattung:</strong> Charmante Terrasse, nahe Karlsplatz</p>
+                            <p><strong>Telefon:</strong> +49 89 123 4567</p>
+                        </div>
+                        <div class="location-invite-text">
+                            <p>
+                                Erleben Sie italienische Gastfreundschaft im Herzen Münchens.<br>
+                                Unser stilvolles Ambiente und die sonnige Terrasse laden zum Verweilen ein – wir freuen uns auf Ihren Besuch!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="location-map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.164466073349!2d11.576124315539062!3d48.13710727922335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e75f9a38c5fd9%3A0x8c4b7a0c35e9f64e!2sSonnenstra%C3%9Fe%2012%2C%2080331%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1698765432109!5m2!1sde!2sde"
+                            width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Preview -->
+    <section id="reservation" class="reservation-preview">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-subtitle">Reservieren Sie Ihren Tisch</p>
+                <h2 class="section-title">Ein besonderer Abend wartet</h2>
+                <p class="section-description">Genießen Sie einen unvergesslichen Abend in authentischer italienischer Atmosphäre. Reservieren Sie jetzt Ihren Tisch und lassen Sie sich von unserer Küche verzaubern.</p>
+                <div class="reservation-image">
+                    <img src="photo-video/table1.jpg" alt="Reservierung La Dolce Vita Trattoria">
+                </div>
+
+                <button class="btn" onclick="openReservation()">Jetzt reservieren</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Window -->
+    <div id="reservation-window" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgb(41, 41, 41); overflow-y: auto; z-index: 1000;">
+        <section class="reservation">
+            <div class="container">
+                <button class="close-btn" onclick="closeReservation()">×</button>
+                <div class="section-header fade-in">
+                    <p class="section-subtitle">Buchen Sie jetzt ein unvergessliches Erlebnis</p>
+                    <h2 class="section-title">Reservierung</h2>
+                    <p class="section-description">Wir freuen uns auf Sie!</p>
+                </div>
+                <form id="reservationForm" class="reservation-form fade-in">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon:</label>
+                        <input type="tel" id="phone" name="phone" pattern="^[+0-9]+$" title="Bitte nur Zahlen und + eingeben" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Anzahl der Gäste:</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Bitte wählen</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 Personen</option>
+                            <option value="3">3 Personen</option>
+                            <option value="4">4 Personen</option>
+                            <option value="5">5 Personen</option>
+                            <option value="6">6 Personen</option>
+                            <option value="more">Mehr als 6 Personen</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Datum:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Uhrzeit:</label>
+                        <select id="time" name="time" required>
+                            <option value="">Bitte wählen</option>
+                            <option value="17:00">17:00</option>
+                            <option value="17:30">17:30</option>
+                            <option value="18:00">18:00</option>
+                            <option value="18:30">18:30</option>
+                            <option value="19:00">19:00</option>
+                            <option value="19:30">19:30</option>
+                            <option value="20:00">20:00</option>
+                            <option value="20:30">20:30</option>
+                            <option value="21:00">21:00</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Besondere Wünsche:</label>
+                        <textarea id="notes" name="notes" rows="4"></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn">Reservieren</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <ul>
+                    <h3>Kontaktinformationen</h3> <br>
+                    <p>Addresse: <br> Sonnenstraße 12, 80331 München</p> <br>
+                    <p>Telefon: +49 123 4567</p> <br>                   
+                    <p>E-Mail: info@ladolcevitatrattoria.de</p> <br>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Öffnungszeiten</h3>
+                    <p>Montag–Donnerstag: 12:00–22:00 Uhr<br>
+                    Freitag–Samstag: 12:00–23:00 Uhr<br>
+                    Sonntag: 12:00–21:00 Uhr</p>
+                    <p><em>Küche schließt 30 Minuten vor Restaurant-Schließung</em></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Folgen Sie uns</h3>
+                    <p>Bleiben Sie verbunden für die neuesten Updates, besondere Veranstaltungen und saisonale Menüänderungen.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Follow us on Instagram">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-icon x-twitter" aria-label="Follow us on X">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.80l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Follow us on Facebook">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Dienstleistungen</h3>
+                    <p>
+                        <a href="#">Online-Bestellung</a><br>
+                        <a href="#">Private Veranstaltungen</a><br>
+                        <a href="#">Catering-Dienste</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 La Dolce Vita Trattoria. Alle Rechte vorbehalten. | <a href="#">Datenschutzrichtlinie</a> | <a href="#">Nutzungsbedingungen</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="slideshow.js" defer></script>
+    <script src="mobilemenu.js" defer></script>
+    <script src="openandclose.js" defer></script>
+    <script src="order.js" defer></script>
+    <script src="reservation.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</body>
+</html>
