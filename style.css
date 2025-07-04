@@ -313,7 +313,7 @@ input, textarea, select, button {
 
 
 body {
-    font-family: "Merienda", cursive;
+    font-family: "Caveat", cursive, sans-serif;
     background: var(--black-primary);
     color: var(--text-light);
     line-height: 1.6;
@@ -896,55 +896,129 @@ body {
 .about {
     padding: 120px 0;
     background: var(--warm-cream);
-}.container {
+    overflow: visible; /* Explizit sichtbar setzen */
+}
+
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}.section-header {
+    overflow: visible; /* Verhindert versteckte Scrollbalken */
+}
+
+.section-header {
     text-align: center;
     margin-bottom: 100px;
-}.section-subtitle {
+    overflow: visible;
+}
+
+.section-subtitle {
     font-family: 'Dancing Script', cursive;
     font-size: 2rem;
     color: var(--primary-gold);
     margin-bottom: 15px;
-}.section-title {
+}
+
+.section-title {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     font-weight: 300;
     color: var(--dark-charcoal);
     margin-bottom: 30px;
-}.section-description {
+}
+
+.section-description {
     font-size: 1.2rem;
     color: var(--text-gray);
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.8;
-}.about-content {
+}
+
+.about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: center;
-}.about-text {
+    align-items: flex-start; /* Geändert von center zu flex-start */
+    overflow: visible; /* Explizit sichtbar */
+}
+
+.about-text {
     font-size: 1.1rem;
     line-height: 1.9;
     color: var(--text-gray);
-}.about-text p {
+    overflow: visible; /* Verhindert Scrollbalken im Text */
+}
+
+.about-text p {
     margin-bottom: 25px;
-}.about-image {
+}
+
+.about-image {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Nur für Hover-Effekt */
     border-radius: 20px;
     box-shadow: 0 25px 60px rgba(0,0,0,0.15);
-}.about-image img {
+    width: 100%; /* Explizite Breite */
+    height: 400px; 
+}
+
+.about-image img {
     width: 100%;
-    height: 500px;
+    height: 400px; 
+    border-radius: 20px;
     object-fit: cover;
     transition: transform 0.5s ease;
-}.about-image:hover img {
+    display: block; 
+    max-width: 100%; 
+}
+
+.about-image:hover img {
     transform: scale(1.05);
 }
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
     
+    .about-image {
+        height: 300px; 
+    }
+    
+    .about-image img {
+        height: 300px; 
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+.about-content > * {
+    overflow: visible;
+}
+
+
+.about-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+
+
 
 
 
@@ -1894,6 +1968,5 @@ background-color: #000000;
     align-items: flex-start;
     gap: 5px;
 }}
-
 
 
