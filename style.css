@@ -1125,7 +1125,8 @@ body {
 /* Mobile Menu */
 .mobile-menu-btn:hover {
     background: var(--gold-light);
-}.menu-qty-btn {
+}
+.menu-qty-btn {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -1136,23 +1137,28 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
-}.menu-qty-btn.minus {
+}
+.menu-qty-btn.minus {
     background: rgba(220, 53, 69, 0.1);
     color: #dc3545;
     border: 2px solid #dc3545;
-}.menu-qty-btn.plus {
+}
+.menu-qty-btn.plus {
     background: rgba(40, 167, 69, 0.1);
     color: #28a745;
     border: 2px solid #28a745;
-}.menu-qty-btn.minus:hover {
+}
+.menu-qty-btn.minus:hover {
     background: #dc3545;
     color: white;
     transform: scale(1.1);
-}.menu-qty-btn.plus:hover {
+}
+.menu-qty-btn.plus:hover {
     background: #28a745;
     color: white;
     transform: scale(1.1);
-}.menu-quantity {
+}
+.menu-quantity {
     font-size: 1.1rem;
     min-width: 30px;
     text-align: center;
@@ -1478,7 +1484,7 @@ body {
     align-items: center;
     margin: 42px auto 34px auto;
     width: 136%;
-    max-width: 450px;
+    max-width: 400px;
     min-height: 100px;
     border-radius: 18px;
 
